@@ -30,7 +30,7 @@ func ValidateUser(user entity.User) error {
 	return nil
 }
 
-func envPortOr(port string) string {
+func EnvPortOr(port string) string {
   // If `PORT` variable in environment exists, return it
   if envPort := os.Getenv("PORT"); envPort != "" {
     return ":" + envPort
