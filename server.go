@@ -5,6 +5,7 @@ import (
 	"golang/server/controller"
 	"golang/server/service"
 	"golang/server/utils"
+	"time"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -17,7 +18,14 @@ var(
 
 func main() {
 	server := gin.Default()
-	server.Use(cors.Default())
+	server.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:3000"},
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE"},
+		AllowHeaders:     []string{"Content-Type"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+		MaxAge:           12 * time.Hour,
+	}))
 	port := utils.EnvPortOr(constants.DEFAULT_PORT)
 	address := constants.HOST + port
 
