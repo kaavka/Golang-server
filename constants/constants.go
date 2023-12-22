@@ -7,7 +7,7 @@ import (
 )
 
 // DefaultPort defines the default server port.
-var DEFAULT_PORT = ":3000"
+var DEFAULT_PORT = "3000"
 var HOST = "0.0.0.0"
 // UsersRoute defines the route for user-related operations
 var USERS_ROUTE = "/users"
