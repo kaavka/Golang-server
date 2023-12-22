@@ -3,6 +3,7 @@ package utils
 import (
 	"fmt"
 	"golang/server/entity"
+	"os"
 )
 
 func ValidateUser(user entity.User) error {
@@ -27,4 +28,13 @@ func ValidateUser(user entity.User) error {
 	}
 
 	return nil
+}
+
+func envPortOr(port string) string {
+  // If `PORT` variable in environment exists, return it
+  if envPort := os.Getenv("PORT"); envPort != "" {
+    return ":" + envPort
+  }
+  // Otherwise, return the value of `port` variable from function argument
+  return ":" + port
 }
