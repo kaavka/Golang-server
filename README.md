@@ -86,7 +86,7 @@ The API provides endpoints for managing user data.
 
 4. **Delete a user:** `DELETE /users?id=user-id-to-delete`
 
-### Structure
+## Structure
 
 The project follows a standard Go project structure:
 
@@ -107,8 +107,8 @@ The project follows a standard Go project structure:
   
 - `main.go`
 
-### Configuration
+## Configuration
 
 The default server port is set to `:3000`, and user-related operations are available at the `/users` route. You can customize these configurations in the `constants/constants.go` file.
 
-### Please enjoy &hearts;
+## Please enjoy &hearts;
