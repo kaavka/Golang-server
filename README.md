@@ -35,11 +35,9 @@ The Go Users Management API is designed to handle CRUD operations for user entit
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/your-golang-users-api.git
-    cd your-golang-users-api
+    git clone https://github.com/kaavka/Golang-server
+    cd ./Golang-server
     ```
-
-   //todo: change url
 
 2. Run the application:
 
@@ -52,6 +50,20 @@ The Go Users Management API is designed to handle CRUD operations for user entit
 The API provides endpoints for managing user data.
 
 1. **Get users list:** `GET /users`
+
+  Example JSON response:
+
+  ```json
+  {
+    "id": "b96bcaad-9a4e-4fc0-bdc0-ebfc51de52a6",
+    "name": "John",
+    "surname": "Doe",
+    "age": 30,
+    "email": "john.doe@example.com",
+    "about": "Software Engineer",
+    "iconColor": "blue"
+  }...
+  ```
 
 2. **Post a new user:** `POST /users`
 
@@ -68,9 +80,38 @@ The API provides endpoints for managing user data.
   }
   ```
 
+  Example JSON response:
+
+  ```json
+  {
+    "id": "b96bcaad-9a4e-4fc0-bdc0-ebfc51de52a6",
+    "name": "John",
+    "surname": "Doe",
+    "age": 30,
+    "email": "john.doe@example.com",
+    "about": "Software Engineer",
+    "iconColor": "blue"
+  }
+  ```
+  Please note that the `id` field is generated automatically on server, so you don't have to do it on your own.
+
 3. **Update an existing user:** `PUT /users`
 
   Example JSON request:
+
+  ```json
+  {
+    "id": "user-id-to-edit",
+    "name": "UpdatedName",
+    "surname": "UpdatedSurname",
+    "age": 25,
+    "email": "updated.email@example.com",
+    "about": "Updated Job Role",
+    "iconColor": "green"
+  }
+  ```
+
+  Example JSON response: 
 
   ```json
   {
