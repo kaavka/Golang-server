@@ -6,6 +6,7 @@ import (
 	"golang/server/service"
 	"golang/server/utils"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,6 +17,7 @@ var(
 
 func main() {
 	server := gin.Default()
+	server.Use(cors.Default())
 	port := utils.EnvPortOr(constants.DEFAULT_PORT)
 	address := constants.HOST + port
 
