@@ -19,7 +19,7 @@ func main() {
 	server := gin.Default()
 	server.Use(cors.Default())
 	port := utils.EnvPortOr(constants.DEFAULT_PORT)
-	address := constants.HOST + port
+	address := port
 
 	server.GET(constants.USERS_ROUTE, UserController.FindAll)
 	server.POST(constants.USERS_ROUTE, UserController.Save)
