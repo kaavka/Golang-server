@@ -16,13 +16,14 @@ var(
 )
 
 func main() {
+	gin.SetMode(gin.ReleaseMode)
 	server := gin.Default()
 	server.Use(cors.Default())
 	port := utils.EnvPortOr(constants.DEFAULT_PORT)
 	address := port
 
 	server.GET(constants.USERS_ROUTE, UserController.FindAll)
-	server.POST(constants.USERS_SAVE_ROUTE, UserController.Save)
+	server.POST(constants.USERS_ROUTE, UserController.Save)
 	server.PUT(constants.USERS_ROUTE, UserController.Edit)
 	server.DELETE(constants.USERS_ROUTE, UserController.Delete)
 

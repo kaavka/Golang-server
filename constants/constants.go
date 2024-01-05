@@ -10,7 +10,6 @@ import (
 var DEFAULT_PORT = "3000"
 // UsersRoute defines the route for user-related operations
 var USERS_ROUTE = "/users"
-var USERS_SAVE_ROUTE = "/users_save"
 // Define initial users
 var DEFAULT_USERS = []entity.User{
 	{
