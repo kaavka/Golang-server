@@ -22,9 +22,9 @@ func main() {
 	address := port
 
 	server.GET(constants.USERS_ROUTE, UserController.FindAll)
-	server.POST(constants.USERS_ROUTE, UserController.Save)
+	server.POST(constants.USERS_SAVE_ROUTE, UserController.Save)
 	server.PUT(constants.USERS_ROUTE, UserController.Edit)
 	server.DELETE(constants.USERS_ROUTE, UserController.Delete)
 
-	server.Run(address) 
+	server.Run(address)
 }
